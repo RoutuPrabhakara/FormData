@@ -299,11 +299,14 @@
         <p>Note (Enter additional information about your company)</p>
         <textarea class="form-control mb-3" id="text" rows="3" placeholder="Additional information..."></textarea>
 
-        <button class="btn btn-primary w-100" onclick="Handle()">Send</button>
+        <button class="btn btn-primary w-100" id="btn" onclick="Handle()">Send</button>
     </div>
 
     <script>
+        const btn = document.getElementById('btn');
+
         function Handle() {
+            btn.innerHTML = 'please wait...'
             const data = {
                 first: document.getElementById("first").value,
                 last: document.getElementById("last").value,
@@ -328,6 +331,8 @@
             .then(res => res.json())
             .then((res) => {
                 console.log(res);
+                
+             btn.innerHTML = 'Done..'
                 alert("Form Submitted ✅ Thank you for your response!");
             })
             .catch((err) => {
