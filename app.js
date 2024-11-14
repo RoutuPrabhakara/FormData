@@ -10,7 +10,7 @@ app. use(cors())
 app.use(express.json())
 dotenv.config()
 const PORT = 4000
-mongoose.connect("mongodb+srv://routuprabhakar2000:routu123@cluster0.0o7o8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://routuprabhakar2000:routu123@cluster0.0o7o8.mongodb.net/?retryWrites=true&w=majority")
 
 .then(()=>{
     console.log("Mongoose connected")
